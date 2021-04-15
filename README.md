@@ -28,4 +28,5 @@ tf_history_1.json - stats from pytorch tensorflow training
 vgg_pt.py  - pytorch vgg definition
 
 vgg_tf.py - TF vgg definition
+
 analysis.ipynb - script for Problem2 Q3

@@ -32,7 +32,7 @@ true_pred = 0
 start_time = time.time()
 for filename in tqdm(os.listdir("HW3_files/test_deployment")):
   with Image.open(os.path.join("HW3_files/test_deployment", filename)).resize((32, 32)) as img:
-    input_image = np.expand_dims(np.float32(img), axis=0)
+    input_image = np.expand_dims(np.float32(img), axis=0)*1.0/255
 
     # Set the input tensor as the image
     interpreter.set_tensor(input_details[0]['index'], input_image)

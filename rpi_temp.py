@@ -1,4 +1,4 @@
-import gpizero
+import gpiozero
 import sysfs_paths as sysfs
 import subprocess
 import time
@@ -22,7 +22,7 @@ def getTelnetPower(SP2_tel, last_power):
 
 
 DELAY = 0.2
-out_fname = "problem3-1.txt"
+out_fname = "problem3_VGG.txt"
 header = "time V A W W/h temp"
 header = "\t".join(header.split(' '))
 out_file = open(out_fname, 'w')
@@ -31,14 +31,14 @@ out_file.write('\n')
 SP2_tel = tel.Telnet('192.168.4.1')
 total_power = 0.0
 #subprocess.Popen(command.split(' '))
-for i in range(6000):
+while True:
     start = time.time()
     
     total_power = getTelnetPower(SP2_tel, total_power)
-    temp = gpizero.CPUTemperature().temperature
+    temp = gpiozero.CPUTemperature().temperature
     
-    fmt_str = '{}\t'*15
-    out = fmt_str.format(time_stamp, total_power, str(temp))
+    fmt_str = '{}\t'*3
+    out = fmt_str.format(start, total_power, str(temp))
     print(out)
     out_file.write(out)
     out_file.write('\n')

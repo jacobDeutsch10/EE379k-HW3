@@ -35,7 +35,7 @@ for i in range(6000):
     start = time.time()
     
     total_power = getTelnetPower(SP2_tel, total_power)
-    temp = gpizeroCPUTemperature().temperature
+    temp = gpizero.CPUTemperature().temperature
     
     fmt_str = '{}\t'*15
     out = fmt_str.format(time_stamp, total_power, str(temp))

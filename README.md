@@ -30,3 +30,5 @@ vgg_pt.py  - pytorch vgg definition
 vgg_tf.py - TF vgg definition
 
 analysis.ipynb - script for Problem2 Q3
+
+hw3-3.pdf script for post processing data from question3
